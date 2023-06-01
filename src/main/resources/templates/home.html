@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+<style>
+table, th, td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 20px;
+}
+th, td {
+  background-color: #96D4D4;
+}
+th{
+font-weight: bold;
+}
+</style>
+</head>
+<body>
+<h1>All employee details:</h1>
+<table>
+<tr>
+<th>OHR</th>
+<th>Name</th>
+<th>Profile</th>
+<th>Status</th>
+</tr>
+<tr th:each="emp: ${employees}">
+<td th:text="${emp.getId()}"/>
+<td><a th:href="@{/employee/details(id=${emp.getId()})}"><span th:text=${emp.getName()}></span></a></td>
+<td th:text="${emp.getRole()}"/>
+<td th:text="${emp.getStatus()}"/>
+</tr>
+</table>
+</body>
+</html>

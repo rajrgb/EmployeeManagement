@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h1 th:text="${employee.getName()}"></h1>
+<div th:text="'OHR id: '+${employee.getId()}"></div>
+<div th:text="'Employee name: '+${employee.getName()}"></div>
+<div th:text="${'Profile: '+employee.getRole}"></div>
+
+</body>
+</html>
